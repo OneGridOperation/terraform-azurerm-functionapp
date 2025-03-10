@@ -18,8 +18,8 @@ Terraform module for managing an Azure Function app.
 
 ## Modules
 
-| Name | Source                                                           | Version |
-|------|------------------------------------------------------------------|---------|
+| Name | Source | Version |
+|------|--------|---------|
 | <a name="module_storageaccount"></a> [storageaccount](#module\_storageaccount) | github.com/onegridoperation/terraform-azurerm-storageaccount.git | v1.0.0 |
 
 ## Resources
