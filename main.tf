@@ -45,6 +45,7 @@ resource "azurerm_linux_function_app" "app" {
       identity_ids = identity.value.identity_ids
     }
   }
+
   site_config {
     health_check_path                 = var.health_check_path
     health_check_eviction_time_in_min = var.health_check_eviction_time_in_min
