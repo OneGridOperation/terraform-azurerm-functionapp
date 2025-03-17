@@ -3,14 +3,14 @@ locals {
   function_app_name = "${local.name}-func"
 
   # Add 'o' to prevent name conflict with Tensio's EnergiMidt tenant. Storage account names must be globally unique.
-  storage_account_name = var.storage_account.app_short_name != null ? "${var.system_short_name}${var.storage_account.app_short_name}o${var.environment}st" : null
+  storage_account_name = var.storage_account.app_short_name != null ? "${var.system_short_name}${var.storage_account.app_short_name}${var.environment}st" : null
 
   existing_storage_account_name       = try(var.storage_account.existing_account.azurerm_storage_account.name, null)
   existing_storage_account_access_key = try(var.storage_account.existing_account.azurerm_storage_account.primary_access_key, null)
 }
 
 module "storageaccount" {
-  source = "github.com/onegridoperation/terraform-azurerm-storageaccount.git?ref=v1.0.1"
+  source = "github.com/onegridoperation/terraform-azurerm-storageaccount.git?ref=v1.0.0"
   count  = var.storage_account.app_short_name != null ? 1 : 0
 
   environment              = var.environment
