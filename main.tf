@@ -8,7 +8,7 @@ locals {
 }
 
 module "storageaccount" {
-  source = "github.com/onegridoperation/terraform-azurerm-storageaccount.git?ref=v1.0.0"
+  source = "github.com/onegridoperation/terraform-azurerm-storageaccount.git?ref=v1.0.1"
   count  = var.storage_account.app_short_name != null ? 1 : 0
 
   environment              = var.environment
